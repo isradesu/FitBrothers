@@ -7,3 +7,5 @@ E no terminal instale:
 pip install flask
 pip install flask-login
 pip install flask-sqlalchemy
+
+Feito por Israel Leite Filho e Sophia Teixeira Araújo
