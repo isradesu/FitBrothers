@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Logo, Navbar e Banner</title>
+   <link rel="stylesheet" href="../static/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Road+Rage&display=swap" rel="stylesheet">
+    
+
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href=""><img src="../static/images/logo.png" alt="Logo" class="logo"></a>
+            <nav>
+                <ul>
+                    <li><a href="#produto1"><img src="../static/images/star.png">PEÇA SEU PEDIDO</a></li>
+                    <li><a href="#produto1"><img src="../static/images/star.png">CARDÁPIO</a></li>
+                    <li><a href="#combo1"><img src="../static/images/star.png">COMBOS</a></li>
+                    <li><a href="#premium1"><img src="../static/images/star.png">PASTEL PREMIUM</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="banner">
+            <img src="../static/images/banner.png" alt="Imagem do Banner">
+        </div>
+        <form action="/pagamento" method="POST" onsubmit="return validateForm(event)">
+        <div class="combos">
+            <h1>COMBOS</h1>
+            
+            <div class="combos_produtos">
+                <div id="combo1">
+                <img src="../static/images/combo1.png" alt="Combo1">
+                <h2>PASTEL + REFRI 350ML</h2>
+                <p>Combo de Pastel de Carne ou Frango com refrigerante de 350ml.</p>
+                <p id="preco">R$11,90</p>
+                <input type="hidden" name="combo1_nome" value="PASTEL + REFRI 350ML">
+                <input type="hidden" name="combo1_preco" value="11.90">
+                <div id="quantity-control">
+                    <button class="btn-decrease" type="button" onclick="changeQuantity('combo1', -1)">-</button>
+                    <span class="quantity" id="combo1_quantity">0</span>
+                    <input type="hidden" name="combo1_quantidade" id="combo1_quantidade" value="0">
+                    <button class="btn-increase" type="button" onclick="changeQuantity('combo1', 1)">+</button>
+                </div>
+            </div>
+                <div id="combo2">
+                    <img src="../static/images/combo2.png" alt="Combo2">
+                    <h2>COMBO DE CASAL</h2>
+                    <p>Dois pasteis com massa fina de whey, um de carne e um de frango.</p>
+                    <p id="preco">R$15,90</p>
+                    <input type="hidden" name="combo2_nome" value="COMBO DE CASAL">
+                    <input type="hidden" name="combo2_preco" value="15.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('combo2', -1)">-</button>
+                        <span class="quantity" id="combo2_quantity">0</span>
+                        <input type="hidden" name="combo2_quantidade" id="combo2_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('combo2', 1)">+</button>
+                    </div>
+                </div>
+                <div id="combo3">
+                    <img src="../static/images/combo3.png" alt="Combo3">
+                    <h2>PASTEL+CALDO DE CANA</h2>
+                    <p>Combo de Pastel de Carne ou Frango com refrigerante de 350ml.</p>
+                    <p id="preco">R$13,90</p>
+                    <input type="hidden" name="combo3_nome" value="PASTEL + CALDO DE CANA">
+                    <input type="hidden" name="combo3_preco" value="13.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('combo3', -1)">-</button>
+                        <span class="quantity" id="combo3_quantity">0</span>
+                        <input type="hidden" name="combo3_quantidade" id="combo3_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('combo3', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+        
+        </div>
+
+        <div class="cardapio">
+            <h1>CARDÁPIO</h1>
+            <div class="cardapio_produtos">
+                <div id="produto1">
+                    <img src="../static/images/produto1.png" alt="Produto1">
+                    <h2>CARNE E QUEIJO</h2>
+                    <p>Pastel com massa de forno, recheio de carne moída e queijo.</p>
+                    <p id="preco">R$8,90</p>
+                    <input type="hidden" name="produto1_nome" value="CARNE E QUEIJO">
+                    <input type="hidden" name="produto1_preco" value="8.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto1', -1)">-</button>
+                        <span class="quantity" id="produto1_quantity">0</span>
+                        <input type="hidden" name="produto1_quantidade" id="produto1_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto1', 1)">+</button>
+                    </div>
+                </div>
+                <div id="produto2">
+                    <img src="../static/images/produto2.png" alt="Produto2">
+                    <h2>CARNE</h2>
+                    <p>Pastel de carne moída com massa fina de whey.</p>
+                    <p id="preco">R$7,90</p>
+                    <input type="hidden" name="produto2_nome" value="CARNE">
+                    <input type="hidden" name="produto2_preco" value="7.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto2', -1)">-</button>
+                        <span class="quantity" id="produto2_quantity">0</span>
+                        <input type="hidden" name="produto2_quantidade" id="produto2_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto2', 1)">+</button>
+                    </div>
+                </div>
+                <div id="produto3">
+                    <img src="../static/images/produto3.png" alt="Produto3">
+                    <h2>FRANGO</h2>
+                    <p>Pastel de frango e milho com massa fina de whey.</p>
+                    <p id="preco">R$7,90</p>
+                    <input type="hidden" name="produto3_nome" value="FRANGO">
+                    <input type="hidden" name="produto3_preco" value="7.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto3', -1)">-</button>
+                        <span class="quantity" id="produto3_quantity">0</span>
+                        <input type="hidden" name="produto3_quantidade" id="produto3_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto3', 1)">+</button>
+                    </div>
+                </div>
+                <div id="produto4">
+                    <img src="../static/images/produto4.png" alt="Produto4">
+                    <h2>QUEIJO</h2>
+                    <p>Pastel de queijo feito com massa fina de whey.</p>
+                    <p id="preco">R$6,90</p>
+                    <input type="hidden" name="produto4_nome" value="QUEIJO">
+                    <input type="hidden" name="produto4_preco" value="6.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto4', -1)">-</button>
+                        <span class="quantity" id="produto4_quantity">0</span>
+                        <input type="hidden" name="produto4_quantidade" id="produto4_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto4', 1)">+</button>
+                    </div>
+                </div>
+
+                <div id="produto5">                   
+                    <img src="../static/images/produto5.png" alt="produto5">
+                    <h2>CALABRESA</h2>
+                    <p>Pastel de calabresa feito com massa fina de whey.</p>
+                    <p id="preco">R$7,90</p>
+                    <input type="hidden" name="produto5_nome" value="CALABRESA">
+                    <input type="hidden" name="produto5_preco" value="7.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto5', -1)">-</button>
+                        <span class="quantity" id="produto5_quantity">0</span>
+                        <input type="hidden" name="produto5_quantidade" id="produto5_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto5', 1)">+</button>
+                    </div>                 
+                </div>
+
+            <div id="produto6">                   
+                <img src="../static/images/produto6.png" alt="produto6">
+                <h2>FRANGO E REQUEIJÃO</h2>
+                <p>Pastel de frango e requeijão com massa de forno com whey isolado.</p>
+                <p id="preco">R$10,90</p>
+                <input type="hidden" name="produto6_nome" value="FRANGO E REQUEIJAO">
+                    <input type="hidden" name="produto6_preco" value="10.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto6', -1)">-</button>
+                        <span class="quantity" id="produto6_quantity">0</span>
+                        <input type="hidden" name="produto6_quantidade" id="produto6_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto6', 1)">+</button>
+                    </div>                 
+            </div>
+                   
+                </div>
+            </div>
+
+        <div class="premium">
+            <h1>PASTEL PREMIUM</h1>
+            <div class="premium_produtos">
+                <div id="produto7">
+                    <img src="../static/images/premium1.png" alt="Premium1">
+                    <h2>CAMARÃO E QUEIJO</h2>
+                    <p>Pastel com massa fina, recheio de camarão e queijo.</p>
+                    <p id="preco">R$20,90</p>
+                    <input type="hidden" name="produto7_nome" value="CAMARÃO E QUEIJO">
+                    <input type="hidden" name="produto7_preco" value="20.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto7', -1)">-</button>
+                        <span class="quantity" id="produto7_quantity">0</span>
+                        <input type="hidden" name="produto7_quantidade" id="produto7_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto7', 1)">+</button>
+                    </div>
+                </div>
+                <div id="produto8">
+                    <img src="../static/images/premium2.png" alt="Premium2">
+                    <h2>CHURRASCO</h2>
+                    <p>Pastel com massa fina, recheio de churrasco e legumes.</p>
+                    <p id="preco">R$18,90</p>
+                    <input type="hidden" name="produto8_nome" value="CHURRASCO">
+                    <input type="hidden" name="produto8_preco" value="18.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto8', -1)">-</button>
+                        <span class="quantity" id="produto8_quantity">0</span>
+                        <input type="hidden" name="produto8_quantidade" id="produto8_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto8', 1)">+</button>
+                    </div>
+                </div>
+                <div id="produto9">
+                    <img src="../static/images/premium3.png" alt="Premium3">
+                    <h2>GRÃO DE BICO</h2>
+                    <p>Pastel com massa de forno, feita com grão de bico. Recheio de lentilha.</p>
+                    <p id="preco">R$13,90</p>
+                    <input type="hidden" name="produto9_nome" value="GRÃO DE BICO">
+                    <input type="hidden" name="produto9_preco" value="13.90">
+                    <div id="quantity-control">
+                        <button class="btn-decrease" type="button" onclick="changeQuantity('produto9', -1)">-</button>
+                        <span class="quantity" id="produto9_quantity">0</span>
+                        <input type="hidden" name="produto9_quantidade" id="produto9_quantidade" value="0">
+                        <button class="btn-increase" type="button" onclick="changeQuantity('produto9', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="blank">
+
+        </div>
+        </div>
+
+        
+        
+
+    <button type="submit" id="cart">
+        <img src="../static/images/cart.png" alt="Carrinho" class="cart-icon">
+        <span id="cart-count">0</span> <!-- Contador de itens no carrinho -->
+    </button>
+</form>
+    
+    <script src="../static/script/script.js"></script>
+</body>
+</html>

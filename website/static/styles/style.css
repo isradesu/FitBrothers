@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #382917;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: #FFF4E1;
+}
+
+a {
+    font-family: "Jost", sans-serif;
+    font-weight: regular;
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header (logo + navbar) */
+header {
+    display: flex;
+    justify-content: space-between; /* Distribui logo à esquerda e navbar à direita */
+    align-items: center;
+    padding: 10px;
+}
+
+.logo {
+    width: 175px;
+    height: 110px;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 22px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #382917;
+    font-size: 24px;
+}
+
+nav ul li a img {
+    size: 20px;
+    margin-right: 6px;
+}
+
+/* Banner */
+.banner {
+    margin-top: 95px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.combos {
+    margin-top: 40px;
+}
+
+#combo1 {
+  
+    
+}
+
+h1 {
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    text-decoration: underline;
+
+}
+
+h2{
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+/* Carrinho fixo no canto inferior direito */
+.cart-icon {
+    position: fixed;
+    bottom: 20px; /* Distância do rodapé */
+    right: 20px;  /* Distância do lado direito */
+    width: 100px;  /* Tamanho do ícone */
+    height: auto;
+    cursor: pointer;
+}
+
+#cart-count{
+    position: fixed;
+    background-color: #FFC972;
+    bottom: 105px; /* Distância do rodapé */
+    right: 40px;  /* Distância do lado direito */
+    width: 30px;  /* Tamanho do ícone */
+    height: 30px;
+    cursor: pointer;
+    
+    display: none;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center;     /* Centraliza verticalmente */
+    
+    border-radius: 50%; /* Deixa o contador redondo, opcional */
+    font-size: 15px; /* Tamanho da fonte */
+    font-family: "Jost", sans-serif;
+    font-weight: bold; /* Deixa o número mais visível */
+}
+
+
+
+
+.combos_produtos{
+    margin-top: 20px;
+    display: flex;
+    
+    justify-content: space-between;
+
+}
+
+.combos_produtos div{
+    width: 22vw;
+    height: 22vw;
+    background-color: white;
+    border-radius: 46px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25));
+}
+
+.combos_produtos div img{
+    width: 100%;
+}
+
+.combos_produtos div h2{
+    margin-left: 2vw;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.combos_produtos div p{
+    font-family: "Road Rage", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30PX;
+    margin-left: 2vw;
+    width: 18vw;
+}
+
+.cardapio{
+    margin-top: 40px;
+}
+
+.cardapio_produtos{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.cardapio_produtos div{
+    width: 22vw;
+    height: 22vw;
+    background-color: white;
+    border-radius: 46px;
+    
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25));
+}
+
+
+
+.cardapio_produtos div img{
+    width: 100%;
+}
+
+.cardapio_produtos div h2{
+    margin-left: 2vw;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.cardapio_produtos div p{
+    font-family: "Road Rage", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    margin-left: 2vw;
+    width: 18vw;
+}
+
+.premium{
+    margin-top: 20px;
+}
+
+.premium_produtos{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.premium_produtos div{
+    width: 22vw;
+    height: 22vw;
+    background-color: white;
+    border-radius: 46px;
+    
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25));
+}
+
+
+
+.premium_produtos div img{
+    width: 100%;
+}
+
+.premium_produtos div h2{
+    margin-left: 2vw;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.premium_produtos div p{
+    font-family: "Road Rage", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    margin-left: 2vw;
+    width: 18vw;
+}
+
+#combo3_title{
+    font-size: 27px;
+}
+
+
+
+#preco{
+    font-family: "Jost", sans-serif;
+    font-weight: 600;
+    width: fit-content;
+}
+
+#quantity-control {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    border-radius: 0;
+    filter: none;
+    border: 1px solid black;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    right: 2vw; /* Alinha à direita */
+    bottom: 20px; /* Alinha na parte inferior */
+}
+
+
+#cart {
+    background-color: transparent; /* Remove fundo padrão */
+    border: none; /* Remove borda padrão */
+    cursor: pointer; /* Mostra o cursor como "mão" para indicar que é clicável */
+    padding: 0; /* Remove o espaçamento interno */
+}
+
+#quantity-control button {
+    width: 70px;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 0px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+#quantity-control button:hover {
+    background-color: #f0f0f0;
+}
+
+.quantity {
+    font-family: "Jost", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    width: 35px;
+    text-align: center;
+}
+
+.blank{
+    height: 86px;
+}
+
+/*.combos h1 img{
+    padding-right: 10px;
+}*/
