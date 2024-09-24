@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página com Logo, Navbar e Banner</title>
-   <link rel="stylesheet" href="../static/styles/style.css">
-   <link rel="stylesheet" href="../static/styles/pagamento.css">
+    <link rel="stylesheet" href="../static/styles/style.css">
+    <link rel="stylesheet" href="../static/styles/pagamento.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Road+Rage&display=swap" rel="stylesheet">
-    
-    
 </head>
 <body>
     <div class="container">
         <header>
-            <a href="/"><img src="../static/images/logo.png" alt="Logo" class="logo"></a>            <nav>
+            <a href="/"><img src="../static/images/logo.png" alt="Logo" class="logo"></a>
+            <nav>
                 <ul>
                     <li><a href="#"><img src="../static/images/star.png">PEÇA SEU PEDIDO</a></li>
                     <li><a href="#"><img src="../static/images/star.png">CARDÁPIO</a></li>
@@ -25,13 +24,12 @@
             </nav>
         </header>
 
-        <form action="/pagamento" method="POST">
+        <form action="" method="POST">
             <!-- Dados Pessoais -->
             <div class="input-container">
                 <input type="text" id="nome" name="nome" required placeholder=" ">
                 <label for="nome">Nome*</label>
             </div>
-
             <div class="input-container">
                 <input type="tel" id="telefone" name="telefone" required placeholder=" ">
                 <label for="telefone">Telefone*</label>
@@ -43,21 +41,19 @@
                 <input type="text" id="endereco" name="endereco" required placeholder=" ">
                 <label for="endereco">Endereço*</label>
             </div>
-
             <div class="input-container">
                 <input type="text" id="numero" name="numero" required placeholder=" ">
                 <label for="numero">Número*</label>
             </div>
-
             <div class="input-container">
                 <input type="text" id="bairro" name="bairro" required placeholder=" ">
                 <label for="bairro">Bairro*</label>
             </div>
-
             <div class="input-container">
                 <input type="text" id="complemento" name="complemento" placeholder=" ">
                 <label for="complemento">Complemento (opcional)</label>
             </div>
+
             <!-- Resumo do Pedido -->
             <h3>RESUMO DO PEDIDO</h3>
             <div class="pedido-resumo">
@@ -65,22 +61,15 @@
                     <p>{{ item['quantidade'] }}x - {{ item['nome'] }} - R${{ item['preco'] * item['quantidade'] }}</p>
                 {% endfor %}
             </div>
-    
+
             <!-- Forma de Pagamento -->
             <div class="input-container">
                 <select id="pagamento" name="pagamento" required>
                     <option value="" disabled selected>Escolha a forma de pagamento</option>
                     <option value="Pix">Pix</option>
-                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Dinheiro">Dinheiro</option>
                 </select>
                 <p class="obs">Obs: O pagamento será feito na entrega</p>
-                
-            </div>
-
-            <!-- Observações -->
-            <div class="input-container">
-                <textarea id="observacoes" name="observacoes" rows="3" placeholder=" "></textarea>
-                <label for="observacoes">Observações (opcional)</label>
             </div>
 
             <!-- Botão de Envio -->
@@ -88,8 +77,7 @@
 
             <div class="blank"></div>
             <!-- Observação -->
-            
         </form>
-</div>
-
+    </div>
 </body>
+</html>

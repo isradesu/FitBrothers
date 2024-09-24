@@ -5,6 +5,9 @@ class Cliente(db.Model):
     nome = db.Column(db.String(100), nullable=False)
     telefone = db.Column(db.String(20), nullable=False)
     endereco = db.Column(db.String(200), nullable=False)
+    numero = db.Column(db.String(20), nullable=False)
+    bairro = db.Column(db.String(200), nullable=False)
+    complemento = db.Column(db.String(200), nullable=True)
 
     pedidos = db.relationship('Pedido', backref='cliente', lazy=True)
 
@@ -35,3 +38,4 @@ class Pagamento(db.Model):
     valor_total = db.Column(db.Float, nullable=False)
 
     pedidos = db.relationship('Pedido', backref='pagamento', lazy=True)
+
