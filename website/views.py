@@ -82,8 +82,8 @@ def adicionar_pedido(cliente_nome, cliente_telefone, cliente_endereco, cliente_n
     db.session.add(novo_cliente)
     db.session.commit()  # Salvar cliente no banco
 
-    # Criar o método de pagamento
-    pagamento_novo = Pagamento(metodo_pagamento=metodo_pagamento, valor_total=0)  # Ajuste o valor_total conforme necessário
+    # Criar o método de pagamento (iniciar com valor_total 0)
+    pagamento_novo = Pagamento(metodo_pagamento=metodo_pagamento, valor_total=0)
     db.session.add(pagamento_novo)
     db.session.commit()
 
@@ -91,12 +91,22 @@ def adicionar_pedido(cliente_nome, cliente_telefone, cliente_endereco, cliente_n
     novo_pedido = Pedido(cliente_id=novo_cliente.id, data=datetime.utcnow(), pagamento_id=pagamento_novo.id)
     db.session.add(novo_pedido)
 
-    # Adicionar os itens do pedido
+    # Inicializar o valor total
+    valor_total = 0
+
+    # Adicionar os itens do pedido e calcular o valor total
     for item in itens:
         produto = Produto.query.filter_by(nome=item['nome']).first()
         if produto:
+            # Criar o registro de item do pedido
             item_pedido = ItemPedido(pedido_id=novo_pedido.id, produto_id=produto.id, quantidade=item['quantidade'])
             db.session.add(item_pedido)
+
+            # Calcular o valor total do pedido
+            valor_total += produto.preco * item['quantidade']
+
+    # Atualizar o valor total no pagamento
+    pagamento_novo.valor_total = valor_total
 
     # Salvar tudo no banco de dados
     db.session.commit()
